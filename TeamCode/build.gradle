@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 //
 // build.gradle in TeamCode
@@ -22,8 +23,13 @@ android {
     packagingOptions {
         jniLibs.useLegacyPackaging true
     }
+
+    kotlinOptions {
+        jvmTarget = "21"
+    }
 }
 
 dependencies {
     implementation project(':FtcRobotController')
+    implementation 'com.github.GramGra07:GentrifiedAppsUtil:4.9.0'
 }
